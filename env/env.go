@@ -47,6 +47,10 @@ func IsProduct() bool {
 	return true
 }
 
+func IsTest() bool {
+	return false
+}
+
 // InCE in container engine
 func InCE() bool {
 	return true
