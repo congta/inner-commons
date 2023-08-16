@@ -24,7 +24,7 @@ func SetRegion(s string) {
 }
 
 func Region() string {
-	return UnknownRegion
+	return region
 }
 
 func SetCluster(s string) {
@@ -43,8 +43,28 @@ func PSM() string {
 	return psm
 }
 
+func SetIDC(s string) {
+	idc = s
+}
+
+func IDC() string {
+	return idc
+}
+
+func Env() string {
+	return "prod"
+}
+
+func Stage() string {
+	return "single_dc"
+}
+
 func IsProduct() bool {
 	return true
+}
+
+func IsPreview() bool {
+	return false
 }
 
 func IsTest() bool {
