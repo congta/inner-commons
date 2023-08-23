@@ -1,5 +1,7 @@
 package env
 
+import "github.com/duke-git/lancet/v2/netutil"
+
 const (
 	UnknownRegion = "-"
 	R_CN          = "CN"
@@ -77,7 +79,15 @@ func InCE() bool {
 }
 
 func HostIP() string {
-	return ""
+	return HostIPV4()
+}
+
+func HostIPV4() string {
+	ips := netutil.GetIps()
+	if len(ips) == 0 {
+		return ""
+	}
+	return ips[0]
 }
 
 func GetIDCFromHost(ip string) string {
